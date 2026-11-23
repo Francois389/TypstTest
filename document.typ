@@ -41,10 +41,10 @@
 #align(center)[
   #set par(justify: false)
   *Abstract*\
-  #lorem(80)
+  #lorem(88)
 ]
 
-#lorem(600)
+#lorem(500)
 
 = Introduction
 

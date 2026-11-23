@@ -4,8 +4,8 @@ layout {
         args "watch" "document.typ"
     }
     pane size="90%" {
-        command "hx"
-        args "document.typ"
+        command "sh"
+        args "-c" "hx document.typ; zellij kill-session $ZELLIJ_SESSION_NAME"
         focus true
     }
 }

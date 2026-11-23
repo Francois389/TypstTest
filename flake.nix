@@ -11,6 +11,9 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         startScript = pkgs.writeShellScriptBin "start" ''
+        if [ -f document.pdf ]; then
+          xdg-open document.pdf
+        fi
         zellij --layout ./layout.kdl
         '';
       in
@@ -19,6 +22,7 @@
           packages = with pkgs; [ typst typstyle tinymist helix zellij startScript ];
 
           shellHook = ''
+          typst compile document.typ 2>/dev/null
             echo "Lancer start pour mettre en place l'env."
           '';
         };
