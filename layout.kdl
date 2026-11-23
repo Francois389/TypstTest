@@ -1,0 +1,11 @@
+layout {
+    pane size="10%" {
+        command "typst"
+        args "watch" "document.typ"
+    }
+    pane size="90%" {
+        command "hx"
+        args "document.typ"
+        focus true
+    }
+}
