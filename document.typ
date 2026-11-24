@@ -1,15 +1,16 @@
-#set document(title: [A FLuid Dynamic Model for Glacier Flow])
+#set document(title: [A Fluid Dynamic Model for Glacier Flow])
 
 
 #set page(
   paper: "us-letter",
   header: align(right + horizon, context document.title),
   numbering: "1",
+  columns: 2,
 )
 
 #set text(
   font: "Libertinus Serif",
-  size: 11pt
+  size: 11pt,
 )
 
 #set par(
@@ -22,31 +23,40 @@
 #show title: set align(center)
 #show title: set block(below: 1.2em)
 
-#title(context document.title)
+#place(
+  top + center,
+  float: true,
+  scope: "parent",
+  clearance: 2em,
+)[
 
-#grid(
-  columns: (1fr, 1fr),
-  align(center)[
-    Therese Tungsten \
-    Artos Institute \
-    #link("mailto:tung@artos.edu")
-  ],
-  align(center)[
-    Dr. John Doe \
-    Artos Institute \
-    #link("mailto:doe@artos.edu")
+  #title(context document.title)
+
+  #grid(
+    columns: (1fr, 1fr),
+    align(center)[
+      Therese Tungsten \
+      Artos Institute \
+      #link("mailto:tung@artos.edu")
+    ],
+    align(center)[
+      Dr. John Doe \
+      Artos Institute \
+      #link("mailto:doe@artos.edu")
+    ],
+  )
+
+  #align(center)[
+    #set par(justify: false)
+    *Abstract*\
+    #lorem(88)
   ]
-)
-
-#align(center)[
-  #set par(justify: false)
-  *Abstract*\
-  #lorem(88)
 ]
 
 #lorem(500)
 
 = Introduction
+
 
 In this report, we will explore the
 various factors that influence _fluid
@@ -63,13 +73,13 @@ Glaciers as the one shown in @glaciers will cease to exist if we don't take acti
 + The geology
 
 #align(center + bottom)[
-#figure(
-  image("glacier.png", width: 70%),
-  caption : [
-    _Glaciers_ form an important part
-    of the earth's climate system.
-  ]
-) <glaciers>
+  #figure(
+    image("glacier.png", width: 70%),
+    caption: [
+      _Glaciers_ form an important part
+      of the earth's climate system.
+    ],
+  ) <glaciers>
 ]
 
 == Test
@@ -94,8 +104,10 @@ defines the glacial flow rate.
 
 Total displaced soil by glacial flow :
 
-$ 7.32 beta + 
-sum_(i=0)^nabla (Q_i (a_i - epsilon)) / 2 $
+$
+  7.32 beta +
+  sum_(i=0)^nabla (Q_i (a_i - epsilon)) / 2
+$
 
 $ v := vec(x_1, x_2, x_3) $
 
