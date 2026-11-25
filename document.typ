@@ -1,5 +1,8 @@
 #set document(title: [A Fluid Dynamic Model for Glacier Flow])
 
+#let ipa = text(
+  style: "italic",
+)[/taɪpst/]
 
 #set page(
   paper: "us-letter",
@@ -17,11 +20,27 @@
   justify: true,
 )
 
-#set heading(numbering: "1.A.1")
+#set heading(numbering: "1.")
 
 #show title: set text(size: 17pt)
 #show title: set align(center)
 #show title: set block(below: 1.2em)
+
+#show heading.where(level: 1): set align(center)
+#show heading.where(level: 1): set text(
+  size: 13pt,
+  weight: "regular",
+)
+#show heading.where(level: 1): smallcaps
+
+#show heading.where(level: 2): set text(
+  size: 11pt,
+  weight: "regular",
+  style: "italic",
+)
+#show heading.where(level: 2): it => {
+  it.body + [.]
+}
 
 #place(
   top + center,
@@ -52,6 +71,14 @@
     #lorem(88)
   ]
 ]
+
+The canonical way to pronouce Typst is #ipa.
+
+#table(
+  columns: (1fr, 1fr),
+  [Name], [Typst],
+  [Pronunciation], ipa
+)
 
 #lorem(500)
 
