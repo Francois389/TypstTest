@@ -80,6 +80,25 @@ The canonical way to pronouce Typst is #ipa.
   [Pronunciation], ipa
 )
 
+#let amazed(term, color: blue) = {
+  text(color, box[✨ #term ✨])
+}
+
+You are #amazed[beautiful]!
+I am #amazed(color: purple)[amazed]!
+
+#let template(doc) = [
+  #set text(font: "DejaVu Serif")
+  #show "something cool": [Typst]
+  #set text(font: "Libertinus Serif")
+  #doc
+]
+
+#show: template
+I am learning something cool today.
+It's going great so far!
+
+
 #lorem(500)
 
 = Introduction
